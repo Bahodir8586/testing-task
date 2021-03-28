@@ -22,6 +22,7 @@ const datePicker = (props) => {
         onChange={dateInputHandler}
         value={date}
         className="form-control datePicker"
+        autoComplete="off"
       />
       <div className="text-center pt-4">
         <button
