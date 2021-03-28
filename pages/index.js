@@ -35,11 +35,16 @@ const Home = (props) => {
         value: date,
       };
       setIsLoading(true);
-      setDates((currentDates) => [...currentDates, element]);
-      axios
-        .post("/", element)
+      fetch("http://127.0.0.1:3000/api/crud", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(element),
+      })
         .then((response) => {
           setIsLoading(false);
+          setDates((currentDates) => [...currentDates, element]);
         })
         .catch((error) => {
           setIsLoading(false);
