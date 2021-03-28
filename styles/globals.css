@@ -21,32 +21,34 @@ a {
   background-color: #f9ff21;
   font-weight: 700;
 }
-.dateShower::after {
+/* .dateShower::before {
   content: "DELETE";
   color: #fff;
   font-size: 20px;
   letter-spacing: 2px;
   background-color: #ff304f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   height: 100%;
   z-index: -1;
-}
+} */
 .dateShower:hover {
   -webkit-filter: grayscale(0.4);
   -moz-filter: grayscale(0.4);
   -o-filter: grayscale(0.4);
   filter: hue-rotate(10deg);
+  background-color: #ff304f;
+  color: white;
 }
-.dateShower:hover .dateShower::after {
-  z-index: 2;
-}
+/* .dateShower:hover .dateShower::before {
+  z-index: 10;
+} */
 
 /* Spinner */
 .Loader,
@@ -116,4 +118,3 @@ a {
     transform: rotate(360deg);
   }
 }
-

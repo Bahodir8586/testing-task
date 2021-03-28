@@ -1,7 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const datePicker = (props) => {
   const [date, setDate] = useState("");
+  useEffect(() => {
+    return () => {
+      setDate("");
+    };
+  }, []);
+
   const dateInputHandler = (e) => {
     setDate(e.target.value);
   };
