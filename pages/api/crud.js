@@ -8,7 +8,7 @@ export default async (req, res) => {
     try {
       await prisma.date.create({
         data: req.body,
-      });  
+      });
       res.status(200).end();
     } catch (error) {
       res.status(400).end();
@@ -25,10 +25,10 @@ export default async (req, res) => {
   }
 
   if (req.method === "DELETE") {
-    try {  
+    try {
       await prisma.date.deleteMany({
         where: {
-          key: {contains:req.body}
+          key: { contains: req.body.key },
         },
       });
       res.status(200).end();

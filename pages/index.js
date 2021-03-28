@@ -56,8 +56,14 @@ const Home = (props) => {
   const removeDateHandler = useCallback(
     (key) => {
       setIsLoading(true);
-      axios
-        .delete("/", { data: key })
+      const el = JSON.stringify({ key: key });
+      fetch("http://127.0.0.1:3000/api/crud", {
+        method: "delete",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: el,
+      })
         .then((response) => {
           setDates((currentDates) => {
             return currentDates.filter((date) => date.key !== key);
