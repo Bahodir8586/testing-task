@@ -1,7 +1,5 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 
-import axios from "../components/axios";
-import DatePicker from "../components/datePicker";
 import DatePicker2 from "../components/datePicker2";
 import DateShower from "../components/dateShower";
 import Spinner from "../components/spinner";
@@ -79,7 +77,6 @@ const Home = (props) => {
 
   let content = (
     <div className="container mx-auto py-5">
-      {/* <DatePicker onSubmit={(date) => addDateHandler(date)} /> */}
       <DatePicker2 onSubmit={(date) => addDateHandler(date)} />
       <div className="mt-5">
         <h3 className="text-center">Saved dates</h3>
